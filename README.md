@@ -2,26 +2,26 @@
 
 A minimal e-commerce backend system built with Spring Boot and MongoDB, following the PRD specifications.
 
-## 📊 ER Diagram
+## ER Diagram
 
 The Entity Relationship Diagram is available in [ER_DIAGRAM.md](ER_DIAGRAM.md). The diagram shows all entities, their relationships, and database schema.
 
 You can also view the ER diagram in Mermaid format in the PRD document (`prd.md`) or in `ER_DIAGRAM.md`.
 
-## 🏗️ Architecture
+##  Architecture
 
 - **E-Commerce API**: Main application running on port 8080
 - **Mock Payment Service**: Separate service running on port 8081
 - **MongoDB**: Database for storing all entities
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Java 17 or higher
 - Maven 3.6+
 - MongoDB (running on localhost:27017)
 - Postman (for testing)
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 ### 1. Start MongoDB
 
@@ -105,7 +105,7 @@ com.example.ecommerce
 └── EcommerceApplication.java
 ```
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 ### Product APIs
 
@@ -224,7 +224,7 @@ Create payment for order
 #### POST /api/webhooks/payment
 Receive payment webhook (called by Mock Payment Service or Razorpay)
 
-## 🔄 Complete Order Flow
+##  Complete Order Flow
 
 1. **Create Products**: POST /api/products
 2. **Add to Cart**: POST /api/cart/add
@@ -234,7 +234,7 @@ Receive payment webhook (called by Mock Payment Service or Razorpay)
 6. **Wait for Webhook**: Mock payment service processes payment (3 seconds delay)
 7. **Check Order Status**: GET /api/orders/{orderId}
 
-## 🧪 Testing with Postman
+##  Testing with Postman
 
 ### Import Postman Collection
 
@@ -305,7 +305,7 @@ The collection includes:
    GET http://localhost:8080/api/orders/<order-id>
    ```
 
-## 📊 Database
+##  Database
 
 MongoDB collections:
 - `users`
@@ -317,7 +317,7 @@ MongoDB collections:
 
 Database name: `ecommerce_db`
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - Spring Boot 3.2.0
 - Spring Data MongoDB
@@ -368,36 +368,36 @@ payment:
   - `RAZORPAY_WEBHOOK_SECRET`: Your Razorpay Webhook Secret
 - Configure webhook URL in Razorpay dashboard: `http://your-domain/api/webhooks/payment`
 
-## ⚠️ Important Notes
+##  Important Notes
 
 - Ensure MongoDB is running before starting the application
 - Start Mock Payment Service before testing payment flow
 - Order status will update automatically after webhook callback (3 seconds delay)
 - Stock is automatically decremented when order is created
 
-## 🎯 Features Implemented
+##  Features Implemented
 
 ### Core Features
-✅ Product CRUD operations
-✅ Product search by name/description (Bonus)
-✅ Cart management (add, view, clear)
-✅ Order creation from cart
-✅ Order history by user (Bonus)
-✅ Order cancellation with stock restoration (Bonus)
-✅ Stock validation and management
-✅ Payment integration (Mock Service & Razorpay)
-✅ Webhook handling
-✅ Order status updates
-✅ Automatic cart clearing after order creation
+ Product CRUD operations
+ Product search by name/description (Bonus)
+ Cart management (add, view, clear)
+ Order creation from cart
+ Order history by user (Bonus)
+ Order cancellation with stock restoration (Bonus)
+ Stock validation and management
+ Payment integration (Mock Service & Razorpay)
+ Webhook handling
+ Order status updates
+ Automatic cart clearing after order creation
 
 ### Technical Improvements
-✅ Clean architecture with DTOs (ProductRequest)
-✅ Status enums (OrderStatus, PaymentStatus) for type safety
-✅ Razorpay integration (Bonus +10 points)
-✅ Comprehensive error handling
-✅ Input validation
+ Clean architecture with DTOs (ProductRequest)
+ Status enums (OrderStatus, PaymentStatus) for type safety
+ Razorpay integration (Bonus +10 points)
+ Comprehensive error handling
+ Input validation
 
-## 📎 Additional Files
+## Additional Files
 
 - **E-Commerce-API.postman_collection.json**: Complete Postman collection with all endpoints
 - **ER_DIAGRAM.md**: Entity Relationship Diagram documentation
@@ -405,7 +405,7 @@ payment:
 - **prd.md**: Original Product Requirements Document
 
 ### Bonus Challenges Completed
-✅ Order History: `GET /api/orders/user/{userId}`
-✅ Order Cancellation: `POST /api/orders/{orderId}/cancel`
-✅ Product Search: `GET /api/products/search?q=laptop`
-✅ Razorpay Integration: Full implementation with webhook support
+ Order History: `GET /api/orders/user/{userId}`
+ Order Cancellation: `POST /api/orders/{orderId}/cancel`
+ Product Search: `GET /api/products/search?q=laptop`
+ Razorpay Integration: Full implementation with webhook support
