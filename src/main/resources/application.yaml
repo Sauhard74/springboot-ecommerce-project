@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecommerce-api
+  
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: ecommerce_db
+  
+  # Jackson configuration
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+# Payment Configuration
+payment:
+  provider: mock # Options: mock, razorpay
+  mock:
+    service:
+      url: http://localhost:8081
+      webhook:
+        url: http://localhost:8080/api/webhooks/payment
+  razorpay:
+    key_id: ${RAZORPAY_KEY_ID:rzp_test_xxxxxxxxxxxxx}
+    key_secret: ${RAZORPAY_KEY_SECRET:your_razorpay_secret}
+    webhook:
+      secret: ${RAZORPAY_WEBHOOK_SECRET:your_webhook_secret}
+
+# Logging
+logging:
+  level:
+    com.example.ecommerce: DEBUG
+    org.springframework.web: INFO
+    org.springframework.data.mongodb: INFO
