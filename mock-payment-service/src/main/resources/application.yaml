@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: mock-payment-service
+
+# E-Commerce API Webhook URL
+payment:
+  webhook:
+    url: http://localhost:8080/api/webhooks/payment
+
+logging:
+  level:
+    com.example.mockpayment: DEBUG
